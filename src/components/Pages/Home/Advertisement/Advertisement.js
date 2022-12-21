@@ -8,7 +8,7 @@ const Advertisement = () => {
 		queryFn: async () => {
 			try {
 				const res = await fetch(
-					'http://localhost:5000/advertisement/categories/animation'
+					'https://assignment-twelve-server.vercel.app/advertisement/categories/animation'
 				);
 				const data = await res.json();
 				return data;
@@ -25,7 +25,7 @@ const Advertisement = () => {
 		queryFn: async () => {
 			try {
 				const res = await fetch(
-					'http://localhost:5000/advertisement/categories'
+					'https://assignment-twelve-server.vercel.app/advertisement/categories'
 				);
 				const data = await res.json();
 				return data;

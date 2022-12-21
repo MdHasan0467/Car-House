@@ -16,7 +16,9 @@ const Audi = () => {
 		queryKey: ['audiDatas'],
 		queryFn: async () => {
 			try {
-				const res = await fetch('http://localhost:5000/audiDatas');
+				const res = await fetch(
+					'https://assignment-twelve-server.vercel.app/audiDatas'
+				);
 				const data = await res.json();
 				return data;
 			} catch (err) {
@@ -28,7 +30,7 @@ const Audi = () => {
 
 	const handleWishList = (id) => {
 		// alert(id)
-		fetch(`http://localhost:5000/productById/${id}`)
+		fetch(`https://assignment-twelve-server.vercel.app/productById/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -53,7 +55,7 @@ const Audi = () => {
 				};
 
 				if (data) {
-					fetch('http://localhost:5000/wishLists', {
+					fetch('https://assignment-twelve-server.vercel.app/wishLists', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',

@@ -17,7 +17,7 @@ const Home = () => {
 
 	useEffect(() => {
 		// console.log(user?.email);
-		fetch(`http://localhost:5000/users/${user?.email}`)
+		fetch(`https://assignment-twelve-server.vercel.app/users/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
 				setLogUser(result[0]);

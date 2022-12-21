@@ -1,12 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import MercedesCategory from './MercedesCategory/MercedesCategory';
 import RollsRoyec from './RollsRoyec/RollsRoyec';
 import TeslaCategory from './TeslaCategory/TeslaCategory';
 
 const ProductCategory = () => {
-;
+	// useEffect(() => {
+	// 	fetch(`https://assignment-twelve-server.vercel.app/products/${category?.RollsRoyec}`);
+	// },[])
 	return (
 		<div className='my-16'>
 			<h1 className='flex justify-start text-2xl text-gray-900 font-bold font-serif my-2 ml-5 underline'>

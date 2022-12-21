@@ -15,7 +15,9 @@ const TeslaGroup = () => {
 		queryKey: ['teslaDatas'],
 		queryFn: async () => {
 			try {
-				const res = await fetch('http://localhost:5000/teslaDatas');
+				const res = await fetch(
+					'https://assignment-twelve-server.vercel.app/teslaDatas'
+				);
 				const data = await res.json();
 				return data;
 			} catch (err) {
@@ -26,7 +28,7 @@ const TeslaGroup = () => {
 
 	const handleWishList = (id) => {
 		// alert(id)
-		fetch(`http://localhost:5000/productById/${id}`)
+		fetch(`https://assignment-twelve-server.vercel.app/productById/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -50,7 +52,7 @@ const TeslaGroup = () => {
 				};
 
 				if (data) {
-					fetch('http://localhost:5000/wishLists', {
+					fetch('https://assignment-twelve-server.vercel.app/wishLists', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',

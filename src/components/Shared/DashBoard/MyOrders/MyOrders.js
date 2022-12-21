@@ -10,7 +10,9 @@ const MyOrders = () => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:5000/myorders?email=${user?.email}`)
+			.get(
+				`https://assignment-twelve-server.vercel.app/myorders?email=${user?.email}`
+			)
 			.then((data) => {
 				if (data.data !== undefined) {
 					console.log(typeof data.data);
@@ -90,7 +92,7 @@ const MyOrders = () => {
 										</Link>
 									)}
 									{order?.resellPrice && order?.paid && (
-										<button className='btn border-0 bg-green-500 hover:bg-green-600 text-white'>
+										<button className='btn border-0 cursor-default bg-green-500 hover:bg-green-500 text-white'>
 											Paid
 										</button>
 									)}

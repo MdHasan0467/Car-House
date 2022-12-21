@@ -91,7 +91,7 @@ const CreateUserByAdmin = () => {
 
 	const saveUsers = (name, email, role, photoURL) => {
 		const user = { name, email, role, photoURL };
-		fetch('http://localhost:5000/users', {
+		fetch('https://assignment-twelve-server.vercel.app/users', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',

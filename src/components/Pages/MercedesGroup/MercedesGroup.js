@@ -16,7 +16,9 @@ const MercedesGroup = () => {
 		queryKey: ['mercedesDatas'],
 		queryFn: async () => {
 			try {
-				const res = await fetch('http://localhost:5000/mercedesDatas');
+				const res = await fetch(
+					'https://assignment-twelve-server.vercel.app/mercedesDatas'
+				);
 				const data = await res.json();
 				return data;
 			} catch (err) {
@@ -28,7 +30,7 @@ const MercedesGroup = () => {
 
 	const handleWishList = (id) => {
 		// alert(id)
-		fetch(`http://localhost:5000/productById/${id}`)
+		fetch(`https://assignment-twelve-server.vercel.app/productById/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -53,7 +55,7 @@ const MercedesGroup = () => {
 				};
 
 				if (data) {
-					fetch('http://localhost:5000/wishLists', {
+					fetch('https://assignment-twelve-server.vercel.app/wishLists', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',

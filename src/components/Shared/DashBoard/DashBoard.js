@@ -13,7 +13,7 @@ const DashBoard = () => {
 	// 	queryKey: ['users'],
 	// 	queryFn: async () => {
 	// 		try {
-	// 			const res = await fetch(`http://localhost:5000/users/${user?.email}`);
+	// 			const res = await fetch(`https://assignment-twelve-server.vercel.app/users/${user?.email}`);
 	// 			const data = await res.json();
 	// 			return data;
 	// 		} catch (err) {
@@ -23,7 +23,7 @@ const DashBoard = () => {
 	// });
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/users/${user?.email}`)
+		fetch(`https://assignment-twelve-server.vercel.app/users/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
 				setLogUser(result[0]);
@@ -60,18 +60,18 @@ const DashBoard = () => {
 								PremiCar
 							</span>
 						</Link>
-						<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-green-600  border-gray-300 border-l-green-600'>
+						<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-green-600  border-gray-300 border-l-green-600'>
 							<Link to='/dashboard/myprofile'>My Profile</Link>
 						</li>
 						{logUser?.role === 'Seller' && (
 							<>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-blue-600  border-gray-300 border-l-blue-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-blue-600  border-gray-300 border-l-blue-600'>
 									<Link to='/dashboard/addProduct'>Add Product</Link>
 								</li>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-orange-600 border-gray-300 border-l-orange-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-orange-600 border-gray-300 border-l-orange-600'>
 									<Link to='/dashboard/myProduct'>My Products</Link>
 								</li>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-purple-600 border-gray-300 border-l-purple-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-purple-600 border-gray-300 border-l-purple-600'>
 									<Link to='/dashboard/mybuyers'>My Buyers</Link>
 								</li>
 							</>
@@ -79,10 +79,10 @@ const DashBoard = () => {
 
 						{logUser?.role === 'Buyer' && (
 							<>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-blue-600 border-gray-300 border-l-blue-600 '>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-blue-600 border-gray-300 border-l-blue-600 '>
 									<Link to='/dashboard/myOrders'>My Orders</Link>
 								</li>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-orange-600 border-gray-300 border-l-orange-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-orange-600 border-gray-300 border-l-orange-600'>
 									<Link to='/dashboard/myWishList'>My WhishList</Link>
 								</li>
 							</>
@@ -90,13 +90,13 @@ const DashBoard = () => {
 
 						{logUser?.role === 'admin' && (
 							<>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-blue-600 border-gray-300 border-l-blue-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-blue-600 border-gray-300 border-l-blue-600'>
 									<Link to='/dashboard/allBuyers'>All Buyers</Link>
 								</li>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-purple-600 border-gray-300 border-l-purple-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-purple-600 border-gray-300 border-l-purple-600'>
 									<Link to='/dashboard/allSeller'>All Sellers</Link>
 								</li>
-								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border hover:animate-pulse hover:bg-pink-600 border-gray-300 border-l-pink-600'>
+								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-pink-600 border-gray-300 border-l-pink-600'>
 									<Link to='/dashboard/createUser'>Create an User</Link>
 								</li>
 							</>

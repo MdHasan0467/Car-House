@@ -7,7 +7,7 @@ const MyProducts = () => {
 	const { user, loading } = useContext(AuthContext);
 	//! fetch for getting products data from mongodb.....
 
-	const url = `http://localhost:5000/products?email=${user?.email}`;
+	const url = `https://assignment-twelve-server.vercel.app/products?email=${user?.email}`;
 
 	const { data: products } = useQuery({
 		queryKey: ['products', user?.email],
@@ -21,12 +21,12 @@ const MyProducts = () => {
 	console.log(products);
 
 	const handleAdvertise = (id) => {
-		fetch(`http://localhost:5000/productById/${id}`)
+		fetch(`https://assignment-twelve-server.vercel.app/productById/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
 				if (data) {
-					fetch('http://localhost:5000/advertisement', {
+					fetch('https://assignment-twelve-server.vercel.app/advertisement', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',

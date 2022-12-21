@@ -12,7 +12,7 @@ const AllSeller = () => {
 	// console.log(logUser?.role);
 	//! fetch for getting products data from mongodb.....
 
-	const url = 'http://localhost:5000/usersrole';
+	const url = 'https://assignment-twelve-server.vercel.app/usersrole';
 
 	const { data: usersrole = [], refetch } = useQuery({
 		queryKey: ['usersrole'],
@@ -33,7 +33,7 @@ const AllSeller = () => {
 	//! Delete button of modal...
 	const handleDeleteUser = (seller) => {
 		console.log('seller', seller?._id);
-		fetch(`http://localhost:5000/seller/${seller?._id}`, {
+		fetch(`https://assignment-twelve-server.vercel.app/seller/${seller?._id}`, {
 			method: 'DELETE',
 			headers: {
 				authorization: `${localStorage.getItem('userAccessToken')}`,
@@ -50,7 +50,7 @@ const AllSeller = () => {
 	};
 
 	const handleMakeVerify = (id) => {
-		fetch(`http://localhost:5000/users/verify/${id}`, {
+		fetch(`https://assignment-twelve-server.vercel.app/users/verify/${id}`, {
 			method: 'PUT',
 		})
 			.then((res) => res.json())

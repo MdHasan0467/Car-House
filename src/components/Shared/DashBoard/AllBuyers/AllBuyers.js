@@ -12,7 +12,7 @@ const AllBuyers = () => {
 
 	//! fetch for getting products data from mongodb.....
 
-	const url = 'http://localhost:5000/usersroleBuyers';
+	const url = 'https://assignment-twelve-server.vercel.app/usersroleBuyers';
 
 	const { data: usersroleBuyers = [], refetch } = useQuery({
 		queryKey: ['usersroleBuyers'],
@@ -31,7 +31,7 @@ const AllBuyers = () => {
 	//! Delete button of modal...
 	const handleDeleteUser = (buyer) => {
 		console.log('buyer', buyer?._id);
-		fetch(`http://localhost:5000/Buyer/${buyer?._id}`, {
+		fetch(`https://assignment-twelve-server.vercel.app/Buyer/${buyer?._id}`, {
 			method: 'DELETE',
 			headers: {
 				authorization: `${localStorage.getItem('userAccessToken')}`,

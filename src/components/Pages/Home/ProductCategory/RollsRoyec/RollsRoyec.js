@@ -8,7 +8,9 @@ const RollsRoyec = () => {
 		queryKey: ['rolls'],
 		queryFn: async () => {
 			try {
-				const res = await fetch('http://localhost:5000/rolls');
+				const res = await fetch(
+					'https://assignment-twelve-server.vercel.app/rolls'
+				);
 				const data = await res.json();
 				return data;
 			} catch (err) {

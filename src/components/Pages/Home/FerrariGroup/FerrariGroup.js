@@ -16,7 +16,9 @@ const FerrariGroup = () => {
 		queryKey: ['ferrariDatas'],
 		queryFn: async () => {
 			try {
-				const res = await fetch('http://localhost:5000/ferrariDatas');
+				const res = await fetch(
+					'https://assignment-twelve-server.vercel.app/ferrariDatas'
+				);
 				const data = await res.json();
 				return data;
 			} catch (err) {
@@ -25,10 +27,11 @@ const FerrariGroup = () => {
 		},
 	});
 	console.log('author', author);
+	console.log('ferrariDatas', ferrariDatas);
 
 	const handleWishList = (id) => {
 		// alert(id)
-		fetch(`http://localhost:5000/productById/${id}`)
+		fetch(`https://assignment-twelve-server.vercel.app/productById/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -53,7 +56,7 @@ const FerrariGroup = () => {
 				};
 
 				if (data) {
-					fetch('http://localhost:5000/wishLists', {
+					fetch('https://assignment-twelve-server.vercel.app/wishLists', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',
@@ -96,7 +99,7 @@ const FerrariGroup = () => {
 						<div className='card-body'>
 							<h2 className='card-title'>Brand Name: {ferrariData?.title}</h2>
 							<p className='text-start'>
-								Exposure time :{' '}
+								Exposure time :
 								<span className='text-blue-600'>{ferrariData?.time}</span>{' '}
 							</p>
 

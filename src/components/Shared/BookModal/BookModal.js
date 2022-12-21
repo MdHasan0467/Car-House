@@ -12,8 +12,8 @@ const BookModal = ({ selected, setSelected }) => {
 		console.log(e.target.value);
 
 		const productImg = selected.image;
-		const sellerName = e.target.sellerName.value;
-		const sellerEmail = e.target.sellerEmail.value;
+		const buyerName = e.target.buyerName.value;
+		const buyerEmail = e.target.buyerEmail.value;
 		const productCategory = e.target.productCategory.value;
 		const productModel = e.target.productModel.value;
 		const resellPrice = e.target.resellPrice.value;
@@ -23,17 +23,19 @@ const BookModal = ({ selected, setSelected }) => {
 
 		const bookingData = {
 			productImg,
-			sellerName,
-			sellerEmail,
+			buyerName,
+			buyerEmail,
 			productCategory,
 			productModel,
 			resellPrice,
 			sellerLocation,
+			sellerName: selected.author,
+			sellerEmail: selected.email,
 			meetingDate,
 			buyerNumber,
 		};
 
-		fetch('http://localhost:5000/bookingData', {
+		fetch('https://assignment-twelve-server.vercel.app/bookingData', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',
@@ -60,7 +62,7 @@ const BookModal = ({ selected, setSelected }) => {
 					<form onSubmit={handleModalValue} className='modal_card my-5'>
 						<input
 							type='text'
-							name='sellerName'
+							name='buyerName'
 							readOnly
 							defaultValue={user?.displayName}
 							className='input text-center input-bordered w-full '
@@ -68,7 +70,7 @@ const BookModal = ({ selected, setSelected }) => {
 
 						<input
 							type='text'
-							name='sellerEmail'
+							name='buyerEmail'
 							readOnly
 							defaultValue={user?.email}
 							className='input input-bordered text-center  my-3 w-full '

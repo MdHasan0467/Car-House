@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
 	//!<===================================>
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/users/${user?.email}`)
+		fetch(`https://assignment-twelve-server.vercel.app/users/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
 				console.log(result);

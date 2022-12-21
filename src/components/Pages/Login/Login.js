@@ -53,7 +53,7 @@ const Login = () => {
 				const user = result.user;
 				console.log(user);
 
-				fetch('http://localhost:5000/googlebuyer', {
+				fetch('https://assignment-twelve-server.vercel.app/googlebuyer', {
 					method: 'POST',
 					headers: {
 						'content-type': 'application/json',
